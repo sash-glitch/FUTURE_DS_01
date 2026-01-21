@@ -1,4 +1,5 @@
-# 📊 Online Retail Dashboard – Revenue, Customers & Cancellations Analysis
+
+# 📊 Online Retail Sales Dashboard – Revenue, Customers & Cancellations Analysis
 
 ## 🔍 Project Overview
 
@@ -7,7 +8,7 @@ This project analyzes transactional data from an online retail business to uncov
 The goal was to build an **interactive Power BI dashboard** that enables:
 
 * High-level KPI monitoring
-* Drill-through analysis into products and customers
+* Deep-dive drill-through analysis into products and customers
 * Tracking completed vs cancelled orders
 * Data-driven recommendations for business improvement
 
@@ -17,24 +18,26 @@ The goal was to build an **interactive Power BI dashboard** that enables:
 
 The dataset contains transactional retail data with the following key columns:
 
-| Column        | Description                                                |
-| ------------- | ---------------------------------------------------------- |
-| `InvoiceNo`   | Unique invoice ID (prefixed with “C” for cancelled orders) |
-| `StockCode`   | Product identifier                                         |
-| `Description` | Product description                                        |
-| `Quantity`    | Number of units sold                                       |
-| `UnitPrice`   | Price per unit                                             |
-| `InvoiceDate` | Transaction date                                           |
-| `CustomerID`  | Unique customer identifier                                 |
-| `Country`     | Country of the customer                                    |
+| Column        | Description                                               |
+| ------------- | --------------------------------------------------------- |
+| `InvoiceNo`   | Unique invoice ID (prefixed with “C” for canceled orders) |
+| `StockCode`   | Product identifier                                        |
+| `Description` | Product description                                       |
+| `Quantity`    | Number of units sold                                      |
+| `UnitPrice`   | Price per unit                                            |
+| `InvoiceDate` | Transaction date                                          |
+| `CustomerID`  | Unique customer identifier                                |
+| `Country`     | Country of the customer                                   |
 
 ---
 
 ## 🎯 Business Questions Answered
 
+The dashboard answers key business questions such as:
+
 * What is the **total revenue and trend** over time?
-* Which **products generate the most revenue** and cancellations?
-* Who are the **highest-value customers** and what is their behavior?
+* Which **products drive the most revenue** and which are most frequently cancelled?
+* Who are the **highest-value customers**, and what is their behavior?
 * How does revenue vary **across countries**?
 * How do **cancellations impact revenue** per customer and per month?
 * Which customers/products/countries should be prioritized for retention or intervention?
@@ -42,6 +45,8 @@ The dataset contains transactional retail data with the following key columns:
 ---
 
 ## 📊 Key Metrics (KPIs)
+
+The following metrics were created using DAX:
 
 * **Total Revenue:** $9.726M
 * **Total Goods Sold:** 142K
@@ -59,28 +64,28 @@ The dataset contains transactional retail data with the following key columns:
 ### Product Insights
 
 * **Top Revenue Product:** Dotcom Postage ($291 revenue, 2 unique customers, only 1 cancellation)
-* Jumbo Bag Red Retro Sports was #5 in popularity among top 10 products
-* Large quantity orders are **more likely to be cancelled**, especially for paid orders
+* Popular product among top 10: Jumbo Bag Red Retro Sports (#5)
+* High-volume orders are **more likely to be canceled**, especially paid orders
 
 ### Customer Insights
 
 * Anonymous customers bring in **most revenue (~$1.42M)** but also **most cancellations**
-* Frequent high-value customers (e.g., 14096) should be considered for **retention strategies**
-* High-risk customers (e.g., 14,911) canceled 3,000 goods (~$11K loss)
+* Frequent high-value customers (e.g., customer 14,096 with 16 orders) should be considered for **retention strategies** like discounts or loyalty programs
+* Some high-risk customers (e.g., 14,911) canceled large quantities (3,000 goods, ~$11K loss)
 
 ### Country Insights
 
 * **UK dominates revenue (~$8M)** and cancellations (~81K goods, $261K lost revenue)
-* Top 10 revenue countries are European; Saudi Arabia has lowest revenue (~1 customer)
+* All top 10 revenue countries are European; Saudi Arabia is the lowest (~1 customer)
 * Other concerning countries for cancellation loss: Singapore ($12.16K), EIRE ($5.037K), Hong Kong (~$5.575K)
 
 ### Cancellation Insights
 
 * Completed orders: $10.62M
-* Cancelled orders: $276K
-* Average revenue per cancelled order: $562.51
-* Average order value of cancelled orders: $233.05
-* Highest loss month due to cancellations: December ($279,818)
+* Canceled orders: $276K
+* Average revenue per canceled order: $562.51
+* Highest cancellation loss month: December ($279,818)
+* Top cancelled products causing highest revenue loss: Amazon fees, manual services
 
 ---
 
@@ -96,35 +101,19 @@ The dataset contains transactional retail data with the following key columns:
 
 ---
 
-## 📸 Dashboard Visuals
-
-### Online Dashboard Overview
-![Main Dashboard](https://github.com/sash-glitch/FUTURE_DS_01/raw/ea884a2f47cae27d79861708ae61ce35f70c8bfd/ONLINE%20DASHBOARD%20OVERVIEW/main-dashboard.png)
-
-### Cancelled Orders Overview
-![Cancelled Orders](https://github.com/sash-glitch/FUTURE_DS_01/raw/ea884a2f47cae27d79861708ae61ce35f70c8bfd/CANCELLED%20ORDERS%20OVERVIEW/cancelled-orders.png)
-
-### Completed Orders Overview
-![Completed Orders](https://github.com/sash-glitch/FUTURE_DS_01/raw/ea884a2f47cae27d79861708ae61ce35f70c8bfd/COMPLETED%20ORDERS%20OVERVIEW/completed-orders.png)
-
-### Drill Through Page
-![Drill Through](https://github.com/sash-glitch/FUTURE_DS_01/raw/ea884a2f47cae27d79861708ae61ce35f70c8bfd/DRILL%20THROUGH%20PAGE/drill-through-page.png)
-
----
-
 ## 📌 Recommendations
 
-* Offer discounts or loyalty programs to **high-value frequent customers**
-* Monitor **anonymous customers** to balance revenue vs cancellation risk
-* Focus marketing and inventory strategies on **high-revenue countries (UK, Europe)**
-* Identify and manage **high-risk customers/products** to reduce revenue loss
-* Consider order quantity limits or verification for **large orders** to reduce cancellations
+* Offer discounts or loyalty programs to high-value frequent customers
+* Monitor anonymous customers to balance revenue vs cancellation risk
+* Focus marketing and inventory strategies on the UK and other high-revenue countries
+* Identify and manage high-risk customers/products to reduce revenue loss
+* Consider order quantity limits or verification for large orders to reduce cancellations
 
 ---
 
 ## 🚀 Tools & Technologies
 
-* **Power BI Desktop** – for interactive dashboard creation
+* **Power BI Desktop** – for dashboard creation and interactive visualization
 * **Power Query** – for data cleaning and transformation
 * **DAX** – for calculated columns, measures, and advanced metrics
 
@@ -143,6 +132,5 @@ Data Analyst | Power BI | Business Intelligence
 2. Use slicers to filter by:
 
    * Date
-   * Invoice Status (Completed / Cancelled)
 3. Right-click on visuals for **drill-through analysis**
 
