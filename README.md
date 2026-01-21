@@ -121,7 +121,7 @@ The following metrics were created using DAX:
 
 ## 👤 Author
 
-**Sasha**
+**Margaret Sasha Otieno**
 Data Analyst | Power BI | Business Intelligence
 
 ---
